@@ -5,5 +5,6 @@ export default function Home() {
         <div style={{display:"flex",flexDirection:"column"}}>
             <Link to={`/type`}>Type</Link>
             <Link to={`/fuction`}>Function</Link>
+            <Link to={`/axios`}>Axios</Link>
         </div>
     )}
