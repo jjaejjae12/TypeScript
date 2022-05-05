@@ -6,5 +6,6 @@ export default function Home() {
             <Link to={`/type`}>Type</Link>
             <Link to={`/fuction`}>Function</Link>
             <Link to={`/axios`}>Axios</Link>
+            <Link to={`/class`}>Class</Link>
         </div>
-    )}
+    )} 
