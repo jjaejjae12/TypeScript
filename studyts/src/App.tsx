@@ -7,6 +7,7 @@ import Home from "./home";
 import Axios from "./routers/axios";
 import Class from "./routers/class";
 import TsFuction from "./routers/function";
+import Interfaces from "./routers/interfaces";
 import TsType from "./routers/type";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/fuction" element={<TsFuction />} />
         <Route path="/axios" element={<Axios />} />
         <Route path="/class" element={<Class />} />
+        <Route path="/interfaces" element={<Interfaces />} />
       </Routes>
     </BrowserRouter>
   );

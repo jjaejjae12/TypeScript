@@ -7,5 +7,6 @@ export default function Home() {
             <Link to={`/fuction`}>Function</Link>
             <Link to={`/axios`}>Axios</Link>
             <Link to={`/class`}>Class</Link>
+            <Link to={`/Interfaces`}>Interfaces</Link>
         </div>
     )} 

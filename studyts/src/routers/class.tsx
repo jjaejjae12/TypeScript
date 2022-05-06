@@ -23,7 +23,7 @@ const nico = new Player("nico","las","니꼬");
 
 
 
- //단어 사전
+ //단어 사전    
  type Words = {
     [key:string]:string//object type 선언
 }
@@ -43,7 +43,7 @@ class Dict {
     }
 }
 
-
+ 
 class Word {
     constructor (
         public term:string,
