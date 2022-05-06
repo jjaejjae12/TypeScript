@@ -8,6 +8,7 @@ import Axios from "./routers/axios";
 import Class from "./routers/class";
 import TsFuction from "./routers/function";
 import Interfaces from "./routers/interfaces";
+import Polymorphism from "./routers/Polymorphism";
 import TsType from "./routers/type";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/axios" element={<Axios />} />
         <Route path="/class" element={<Class />} />
         <Route path="/interfaces" element={<Interfaces />} />
+        <Route path="/polymorphism" element={<Polymorphism />} />
       </Routes>
     </BrowserRouter>
   );
