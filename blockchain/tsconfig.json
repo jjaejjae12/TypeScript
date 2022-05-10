@@ -1,12 +1,20 @@
 {
     "include": ["src"],
     "compilerOptions": {
-        "outDir":"buid",
-        "target": "es6",
-        "lib": ["ES6","DOM"],
+        "outDir": "build",
+        "module": "commonjs",
+        "target": "es5",
+        "lib": ["ES6"],
         "strict": true,
-        "allowJs": true
-    }
+        // "noImplicitAny": false,
+        "sourceMap": false,
+        "esModuleInterop": true,
+        "module":"CommonJS"
+    },
+    "typeRoots": ["node_modules/@types"],
+    "exclude": [
+        "node_modules"
+    ]
 }
 
 //tsconfig 기타 항목
