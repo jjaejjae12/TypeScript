@@ -106,3 +106,58 @@ type ObjectExtendTypeNumber = {y:number};
 //&연산자로 object 타입 함치기
 
 type NewObjectType = ObjectExtendTypeString & ObjectExtendTypeNumber;
+
+let LiteralTypesName :123;
+//Literal type 지정된 값만 들어올수 있음
+
+// LiteralTypesName = "asd" 오류 발생
+
+let UnionLiteralType : '대머리' | '솔로';
+//Union + Literal 자동완성쉬워짐
+
+function LiteralFunction(a : "hello") : 1 | 0{
+    //param과return값도 지정 가능
+    return 1;
+}
+
+LiteralFunction('hello');
+
+var ErrorLiteral = {
+    name : 'kim'
+} as const
+/*
+as const는 효과가 2개인데
+1. 타입을 object의 value로 바꿔줍니다. (타입을 'kim'으로 바꿔줍니다)
+2. object안에 있는 모든 속성을 readonly로 바꿔줍니다 (변경하면 에러남) 
+*/
+
+function ErrorLiteralFuntion(a : 'kim'){
+
+}
+
+//ErrorLiteralFuntion(ErrorLiteral.name); 오류 이류:함수의prams은 타입이'kim'이지만 ErrorLiteral의 name의 타임은 string이여서
+ErrorLiteralFuntion(ErrorLiteral.name as 'kim');//as 해결법
+ErrorLiteralFuntion(ErrorLiteral.name);
+
+type FunctionType = (a:string)/*param*/ => number;//return
+//functuon alias;
+
+const FFunction:FunctionType = function (a){
+    return 10;
+}
+
+type MeobjecFunctionType= {
+    name : string,
+    age:number,
+    pluson : ( x :number ) => number,
+    changeName : () => void
+  }
+
+let objecFunction:MeobjecFunctionType = {
+    name:'kim',
+    age:12,
+    pluson(x){
+       return x + 1;
+    },
+    changeName : () => {}
+}
