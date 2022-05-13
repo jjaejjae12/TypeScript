@@ -161,3 +161,40 @@ let objecFunction:MeobjecFunctionType = {
     },
     changeName : () => {}
 }
+
+let HiElement = document.querySelector('#title');
+//html 요소 union 타입:Element|null
+
+//narrowing 방법
+if(HiElement !=  null) {
+    HiElement.innerHTML = '반가워요';
+}
+
+//instanceof 자식요소 체크
+if (HiElement instanceof HTMLElement) {
+    HiElement.innerHTML = '반가워요'
+};
+
+//js 신문법
+if (HiElement?.innerHTML != undefined) {
+    HiElement.innerHTML = '반가워요'
+}
+
+//as 사용 비추천
+let AssertionElemnt = document.querySelector('#title') as HTMLElement;
+AssertionElemnt.innerHTML = '반가워요'
+
+let LinkElement = document.querySelector(".link");
+if (LinkElement instanceof HTMLAnchorElement) {
+    //정확한ELement타입 지정필요
+    LinkElement.href = 'https://kakao.com'
+}
+
+let EventElement = document.querySelector('#button');
+EventElement?.addEventListener('click',function(){
+    //narrowing 방법
+    console.log(1);
+})
+
+
+
