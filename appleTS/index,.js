@@ -129,3 +129,16 @@ EventElement === null || EventElement === void 0 ? void 0 : EventElement.addEven
     //narrowing 방법
     console.log(1);
 });
+//class 문법 타입지정
+var Person = /** @class */ (function () {
+    function Person(a) {
+        this.name = a;
+    }
+    Person.prototype.classFuntion = function (a) {
+        console.log(a);
+        return a + 'qkr';
+    };
+    return Person;
+}());
+var ClassHumen1 = new Person('kim');
+var ClassHumen2 = new Person('pak');

@@ -196,5 +196,17 @@ EventElement?.addEventListener('click',function(){
     console.log(1);
 })
 
+//class 문법 타입지정
+class Person {
+    name:string;
+    constructor(a:string){
+        this.name = a;
+    }
+    classFuntion(a:string):string {
+        console.log(a)
+        return a + 'qkr';
+    }
+}
 
-
+let ClassHumen1 =  new Person('kim');
+let ClassHumen2 =  new Person('pak');
