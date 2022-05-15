@@ -210,3 +210,23 @@ class Person {
 
 let ClassHumen1 =  new Person('kim');
 let ClassHumen2 =  new Person('pak');
+
+interface interfaceObjectType {color:string, width:number};
+//interface object타입 지정법
+
+let interfaceObject:interfaceObjectType = {color : 'red',width : 100};
+
+interface interfacExtendsOne {name:string};
+
+interface interfaceExtendsTwo extends interfacExtendsOne {age:number}
+
+let IEO : interfacExtendsOne= {name:"kim"};
+ 
+let IET : interfaceExtendsTwo = {name:"h",age:12};
+
+interface interfaceOverlap  {name:string};
+interface interfaceOverlap  {age:number};
+//중복시 자동 extends됨
+
+let interfaceOverlapAnimal = {name:'sa',age:17};
+//type &로 extends구현 가능 but 중복선언 불가능
