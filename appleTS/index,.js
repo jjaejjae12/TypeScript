@@ -3,6 +3,15 @@
 //npm install --save typescript @types/node @types/react @types/react-dom @types/jest 이미있는 react프로젝트에 ts설치
 //npx create-react-app my-app --template typescript 처음부터 ts셋팅 react프로젝트 생성
 //tsc -w ts로 작성한 파일js로 자동변환
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var tsTpye = "kim";
 // : (type) 타입 지정
 var stringArray = ["asd", "dasdd"];
@@ -142,3 +151,39 @@ var Person = /** @class */ (function () {
 }());
 var ClassHumen1 = new Person('kim');
 var ClassHumen2 = new Person('pak');
+;
+//interface object타입 지정법
+var interfaceObject = { color: 'red', width: 100 };
+;
+var IEO = { name: "kim" };
+var IET = { name: "h", age: 12 };
+;
+;
+//중복시 자동 extends됨
+var interfaceOverlapAnimal = { name: 'sa', age: 17 };
+//type &로 extends구현 가능 but 중복선언 불가능
+//restparameter
+function restParameter() {
+    var a = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        a[_i] = arguments[_i];
+    }
+    //restparameter ...사용시 수 상관없이 파라미터를 받을수 있음
+    console.log(a);
+}
+restParameter(1, 2, 3, 4, 5, 6, 7, 8, 8, 9, 10);
+//spread operator
+var spreadOperator1 = [1, 2, 3];
+var spreadOperator2 = [4, 5];
+var spreadOperator3 = __spreadArray(__spreadArray([], spreadOperator1, true), spreadOperator2, true);
+console.log(spreadOperator3);
+//destructuring
+var _a = [1, 2], one = _a[0], two = _a[1];
+console.log(one);
+var _b = { student: "d", age: 12 }, student = _b.student, age = _b.age;
+var functionDestructuringOne = { student: "d", age: 12 };
+function functionDestructuring(_a) {
+    var student = _a.student, age = _a.age;
+    console.log(student, age);
+}
+functionDestructuring(functionDestructuringOne);
