@@ -285,3 +285,29 @@ function neverFumtion(parameter: string) {
         parameter;
     }
 }
+
+//public,private
+class publcikUser {
+    public name: string;
+  
+    constructor(){
+      this.name = 'kim';
+    }
+  }
+  
+  let userPublcik = new publcikUser();
+  userPublcik.name = 'park';  //가능
+
+  class privateUser {
+    public name :string;
+    private familyName :string;  
+  
+    constructor(){
+      this.name = 'kim';
+      this.familyName = '안뇽'; //가능
+    }
+  }
+  
+  let userPrivate = new privateUser();
+  userPrivate.name = 'park';  //가능
+  //userPrivate.familyName = 456; //에러남
