@@ -311,3 +311,24 @@ class publcikUser {
   let userPrivate = new privateUser();
   userPrivate.name = 'park';  //가능
   //userPrivate.familyName = 456; //에러남
+
+//protected,static
+  class extendsUser {
+    protected x = 10;
+  }
+  
+  class extendsNewUser extends extendsUser {
+      //User을불러옴
+    doThis(){
+      this.x = 20;
+    }
+  }
+
+  class staticUser {
+    static x = 10;
+    y = 20;
+  }
+  
+  let staicKohn = new staticUser();
+  //staicKohn.x //불가능
+  staticUser.x //가능
