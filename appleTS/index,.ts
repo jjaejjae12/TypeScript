@@ -332,3 +332,5 @@ class publcikUser {
   let staicKohn = new staticUser();
   //staicKohn.x //불가능
   staticUser.x //가능
+
+  
