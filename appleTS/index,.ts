@@ -333,4 +333,30 @@ class publcikUser {
   //staicKohn.x //불가능
   staticUser.x //가능
 
-  
+  //Generic
+
+  function GenericFuntion<MyType>(x:MyType[]) : MyType{
+      //매개변수지정 타입 그대로 return 해줌
+      return x[0];
+  }
+
+  let GenericA = GenericFuntion<number>([4,2]);
+  console.log(GenericA + 1);//오류뜸 
+  let GenericB = GenericFuntion<string>(['2','4']);
+  console.log(GenericB);
+  /*
+  해결법 1.narrowng
+  해결법 2.Generic 타입을 매개변수로 받음 <MyType,MeType>식으로 2개사용 가능
+  */ 
+
+ interface LengthCheck {
+     length : number
+ }
+
+ function ExtendGenericFunction<MyType extends LengthCheck>(x:MyType) {
+     //extends 로 narrowing , 타입제한
+     return x.length;
+ };
+
+ let ExtendGenericA = ExtendGenericFunction<string[]>(['100']);
+   

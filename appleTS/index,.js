@@ -3,6 +3,21 @@
 //npm install --save typescript @types/node @types/react @types/react-dom @types/jest 이미있는 react프로젝트에 ts설치
 //npx create-react-app my-app --template typescript 처음부터 ts셋팅 react프로젝트 생성
 //tsc -w ts로 작성한 파일js로 자동변환
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -187,3 +202,91 @@ function functionDestructuring(_a) {
     console.log(student, age);
 }
 functionDestructuring(functionDestructuringOne);
+function NullNarrowing(a) {
+    //null and 'tpye narrowing
+    if (a && typeof a === 'string') {
+    }
+}
+//Never
+function neverFumtion(parameter) {
+    /*
+    조건 1) 절대 return을 하지 않아야하고
+    조건 2) 함수 실행이 끝나지 않아야합니다 (전문용어로 endpoint가 없어야합니다)
+    */
+    /*
+     while (true) {
+         console.log(123);
+     }
+     */
+    /*
+     throw new Error('에러메세지')
+     */
+    if (typeof parameter === "string") {
+        parameter + 1;
+    }
+    else {
+        parameter;
+    }
+}
+//public,private
+var publcikUser = /** @class */ (function () {
+    function publcikUser() {
+        this.name = 'kim';
+    }
+    return publcikUser;
+}());
+var userPublcik = new publcikUser();
+userPublcik.name = 'park'; //가능
+var privateUser = /** @class */ (function () {
+    function privateUser() {
+        this.name = 'kim';
+        this.familyName = '안뇽'; //가능
+    }
+    return privateUser;
+}());
+var userPrivate = new privateUser();
+userPrivate.name = 'park'; //가능
+//userPrivate.familyName = 456; //에러남
+//protected,static
+var extendsUser = /** @class */ (function () {
+    function extendsUser() {
+        this.x = 10;
+    }
+    return extendsUser;
+}());
+var extendsNewUser = /** @class */ (function (_super) {
+    __extends(extendsNewUser, _super);
+    function extendsNewUser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    //User을불러옴
+    extendsNewUser.prototype.doThis = function () {
+        this.x = 20;
+    };
+    return extendsNewUser;
+}(extendsUser));
+var staticUser = /** @class */ (function () {
+    function staticUser() {
+        this.y = 20;
+    }
+    staticUser.x = 10;
+    return staticUser;
+}());
+var staicKohn = new staticUser();
+//staicKohn.x //불가능
+staticUser.x; //가능
+//Generic
+function GenericFuntion(x) {
+    //매개변수지정 타입 그대로 return 해줌
+    return x[0];
+}
+var GenericA = GenericFuntion([4, 2]);
+console.log(GenericA + 1); //오류뜸 
+var GenericB = GenericFuntion(['2', '4']);
+console.log(GenericB);
+function ExtendGenericFunction(x) {
+    //extends 로 narrowing , 타입제한
+    return x.length;
+}
+;
+var ExtendGenericA = ExtendGenericFunction(['100']);
