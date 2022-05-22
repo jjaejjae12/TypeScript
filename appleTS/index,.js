@@ -290,3 +290,18 @@ function ExtendGenericFunction(x) {
 }
 ;
 var ExtendGenericA = ExtendGenericFunction(['100']);
+var dogTupleType = ['dog', 1, true];
+//tupeltype : 순서 위치까지 타입을 지정해줌
+//?는 맨 마지막에 사용
+function tupleFuntion() {
+    var x = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        x[_i] = arguments[_i];
+    }
+    //params tupletype
+    console.log(x);
+}
+tupleFuntion(1, '2');
+//spread
+var spreadArr1 = [1, 2, 3];
+var spreadArr2 = __spreadArray([4, 5], spreadArr1, true); //arr합칠때

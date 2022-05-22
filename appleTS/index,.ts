@@ -359,4 +359,20 @@ class publcikUser {
  };
 
  let ExtendGenericA = ExtendGenericFunction<string[]>(['100']);
-   
+
+ let dogTupleType:[string,number?,boolean?] = ['dog',1,true];
+ //tupeltype : 순서 위치까지 타입을 지정해줌
+ //?는 맨 마지막에 사용
+
+ function tupleFuntion(...x:[number,string]) {
+     //params tupletype
+     console.log(x)
+ }
+
+ tupleFuntion(1,'2')
+
+ //spread
+
+ let spreadArr1 = [1,2,3];
+ let spreadArr2:[number,number,...number[]] = [4,5,...spreadArr1];//arr합칠때
+
