@@ -376,3 +376,25 @@ class publcikUser {
  let spreadArr1 = [1,2,3];
  let spreadArr2:[number,number,...number[]] = [4,5,...spreadArr1];//arr합칠때
 
+//implements
+
+
+interface CarType {
+    model : string;
+    price : (price:number) => number;
+}
+
+class Car implements CarType {
+    //implements : 해당 class에 interface에 속성이 있는지 확인 타입할당x
+
+    // model : number = 1;//오류
+    model : string = "1";
+    price (a:number) {//a는 anytype이 됨
+        return a *10;
+    };
+    // constructor(a : string) {
+    //     this.model = a;
+    // }
+}
+
+// let NewCar = new Car('morning');
