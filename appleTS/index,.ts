@@ -398,3 +398,42 @@ class Car implements CarType {
 }
 
 // let NewCar = new Car('morning');
+
+interface onlyStringType {
+    //object index signature
+    // age : number,error 이미 지정된 타입
+    //afe : '20',문제 없음
+    //age : number, index signature와 충동이 안되면 문제 없음
+    [key : string] : string|number,//모든 스트링 속성의 타입은 스트링
+}
+
+let user : onlyStringType  = {
+    name : 'kim',
+    age : '20',
+    location : 'seoul'
+}
+
+interface onlyNumberType {
+    //array 형식도 가능
+    [key:number] : string
+}
+
+let user1 : onlyNumberType  = {
+    1 : 'kim',
+    2 : '20',
+    3 : 'seoul'
+}
+
+interface manyObjectType {
+    //recursive한 타입 지어
+    'font-size' : manyObjectType | number//font-size안에 manyObjectType을 넣을수 있다는 의미
+    
+}
+
+let css : manyObjectType = {
+    'font-size' : {
+        'font-size' : {
+            'font-size' : 14
+        }
+    }
+}
