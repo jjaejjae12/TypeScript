@@ -479,3 +479,22 @@ type TypeChanger<MyType> = {
 };
 
 type NewCarType = TypeChanger<ExCar>;
+
+//조건문 타입
+
+type Age<T> = T extends string ? string : unknown;
+
+let aee: Age<string>; //string
+let aee2: Age<number>; //unknown
+
+//infer
+
+type InferType<T> = T extends infer R ? R : unknown; //T에서 R에 맞는 타입을 추출
+
+let inferType: InferType<string>; //strinf
+
+//사용예
+
+type InferType2<T> = T extends () => infer R ? R : unknown;
+
+let inferType2: InferType2<() => void>; //void
